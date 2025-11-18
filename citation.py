@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 import json
 import random
-
 # Fichier des citations
 FICHIER_CITATIONS = 'citations.json'
 
