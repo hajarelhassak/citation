@@ -19,7 +19,7 @@ def enregistrer(fichier, citations):
     with open(fichier, 'w') as f:
         json.dump(citations, f, indent=4)
 
-# Afficher une citation aléatoire
+# Afficher une citation differente chauqe fois
 def afficher():
     if citations:
         citation = random.choice(citations)
@@ -43,7 +43,7 @@ def ajouter():
 def supprimer_toutes_les_citations():
     if messagebox.askyesno('Confirmation', 'Êtes-vous sûr de vouloir supprimer toutes les citations ?'):
         global citations
-        citations = []  # Réinitialise la liste
+        citations = []
         enregistrer(FICHIER_CITATIONS, citations)
         messagebox.showinfo('Succès', 'Toutes les citations ont été supprimées.')
     else:
@@ -52,12 +52,11 @@ def supprimer_toutes_les_citations():
 # Initialisation des citations
 citations = charger_citations(FICHIER_CITATIONS)
 
-# Création de la fenêtre principale
+# fenetre
 fenetre = tk.Tk()
 fenetre.title('Hajalix - Gestion de Citations')
 fenetre.geometry("600x500")
 
-# Interface utilisateur
 tk.Label(fenetre, text='Entrez une citation :').grid(row=0, column=0, padx=10, pady=5, sticky="e")
 entree_citation = tk.Entry(fenetre, width=40)
 entree_citation.grid(row=0, column=1, padx=10, pady=5)
@@ -66,18 +65,14 @@ tk.Label(fenetre, text='Entrez l auteur :').grid(row=1, column=0, padx=10, pady=
 entree_auteur = tk.Entry(fenetre, width=40)
 entree_auteur.grid(row=1, column=1, padx=10, pady=5)
 
-# Boutons pour les actions
 bouton_ajouter = tk.Button(fenetre, text='Ajouter la citation', command=ajouter)
 bouton_ajouter.grid(row=2, column=1, pady=10)
 
 bouton_afficher = tk.Button(fenetre, text='Afficher une citation aléatoire', command=afficher)
 bouton_afficher.grid(row=3, column=1, pady=10)
 
-# Bouton pour supprimer toutes les citations
 bouton_supprimer_tout = tk.Button(fenetre, text='Supprimer toutes les citations', command=supprimer_toutes_les_citations)
 bouton_supprimer_tout.grid(row=4, column=1, pady=10)
 
-
-# Boucle principale
 fenetre.mainloop()
 
