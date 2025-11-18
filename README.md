@@ -13,7 +13,7 @@ Le **Gestionnaire de Citations** est une application qui permet de sauvegarder, 
   - Le nom de l'auteur.
 - Afficher au hazard une citation
 - Modifier ou supprimer des citations existantes.
-- Exporter la collection sous différents formats (JSON, CSV, ou PDF).
+- Exporter la collection sous formats (JSON).
 - Interface utilisateur simple et intuitive.
 
 ---
